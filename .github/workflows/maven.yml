@@ -13,7 +13,7 @@ permissions:
 jobs:
   compile:
     name: compile project
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v4
@@ -31,7 +31,7 @@ jobs:
 
   test:
      name: unit test execution
-     runs-on: ubuntu-latest
+     runs-on: self-hosted
      needs: compile
 
      steps:
@@ -50,7 +50,7 @@ jobs:
 
   build:
      name: build project
-     runs-on: ubuntu-latest
+     runs-on: self-hosted
      needs: test
 
      steps:
